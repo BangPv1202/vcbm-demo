@@ -26,9 +26,9 @@ export default {
    * @doc https://github.com/chimurai/http-proxy-middleware
    */
   test: {
-    // localhost:8000/api/** -> https://pro-api.ant-design-demo.workers.dev/api/**
+    // localhost:8000/api/** -> https://vcbm-demo-fawn.vercel.app//api/**
     '/api/': {
-      target: 'https://pro-api.ant-design-demo.workers.dev',
+      target: 'https://vcbm-demo-fawn.vercel.app',
       changeOrigin: true,
     },
   },

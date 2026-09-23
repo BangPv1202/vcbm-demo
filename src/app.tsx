@@ -115,7 +115,9 @@ export const layout: RunTimeLayoutConfig = ({
       // 如果没有登录，重定向到 login
       if (!initialState?.currentUser && location.pathname !== loginPath) {
         history.replace(
-          `${loginPath}?redirect=${encodeURIComponent(location.pathname + location.search + location.hash)}`,
+          `${loginPath}?redirect=${encodeURIComponent(
+            location.pathname + location.search + location.hash,
+          )}`,
         );
       }
     },
@@ -154,7 +156,7 @@ export const layout: RunTimeLayoutConfig = ({
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
-    childrenRender: (children) => {
+    childrenRender: children => {
       // if (initialState?.loading) return <PageLoading />;
       return (
         <>
@@ -163,15 +165,15 @@ export const layout: RunTimeLayoutConfig = ({
             disableUrlParams
             enableDarkTheme
             collapse={initialState?.settingDrawerOpen}
-            onCollapseChange={(open) => {
-              setInitialState((s) => ({
+            onCollapseChange={open => {
+              setInitialState(s => ({
                 ...s,
                 settingDrawerOpen: open,
               }));
             }}
             settings={initialState?.settings}
-            onSettingChange={(settings) => {
-              setInitialState((s) => ({
+            onSettingChange={settings => {
+              setInitialState(s => ({
                 ...s,
                 settings,
               }));
@@ -190,7 +192,7 @@ export const layout: RunTimeLayoutConfig = ({
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const request: RequestConfig = {
-  baseURL: isDev ? '' : 'https://pro-api.ant-design-demo.workers.dev',
+  baseURL: isDev ? '' : 'https://vcbm-demo-fawn.vercel.app',
   ...errorConfig,
 };
 
